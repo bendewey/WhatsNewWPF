@@ -1,0 +1,97 @@
+﻿<Page x:Class="WhatsNewWPF.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="1000"
+	Title="What's New with WPF">
+	<Page.Resources>
+		<Style x:Key="RomanNumeralStyle" TargetType="{x:Type TextBlock}">
+			<Setter Property="FontFamily" Value="Book Antiqua" />
+			<Setter Property="FontSize" Value="90" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="Margin" Value="0,20,0,0" />
+		</Style>
+	</Page.Resources>
+
+    <ScrollViewer x:Name="scrollviewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Background="{DynamicResource HeaderColor}" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Tag="Ribbon/RibbonPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FFA80000">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Ribbon &gt;" FontSize="12" />
+                        <TextBlock Text="I" Style="{DynamicResource RomanNumeralStyle}" />
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="Validation/ValidationPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FFA84C00" Grid.Row="0" Grid.Column="1">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Validation &gt;" FontSize="12" />
+                        <TextBlock Text="II" Style="{DynamicResource RomanNumeralStyle}" />
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="Binding/BindingPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FFC9960F" Grid.Row="0" Grid.Column="2">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Binding &gt;" FontSize="12" />
+                        <TextBlock Text="III" Style="{DynamicResource RomanNumeralStyle}" />
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="LiveSorting/LiveSorting.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF418B00" Grid.Row="0" Grid.Column="3">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Live Sorting &gt;" FontSize="12" />
+                        <TextBlock Text="IV" Style="{DynamicResource RomanNumeralStyle}" />
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="WeakReferences/WeakReferencesPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF0F00A8" Grid.Row="1" Grid.Column="0">
+            	<Viewbox Margin="10">
+            		<Grid Width="130" Height="130">
+                        <TextBlock Text="WeakReferences &gt;" FontSize="12" />
+            			<TextBlock Text="V" Style="{DynamicResource RomanNumeralStyle}" />
+            		</Grid>
+            	</Viewbox>
+            </Button>
+
+			<Button Tag="WinRt/WinRtPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF006BA8" Grid.Row="1" Grid.Column="1">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Windows Runtime &gt;" FontSize="12" />
+                        <TextBlock Text="VI" Style="{DynamicResource RomanNumeralStyle}"/>
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="Owin/OwinPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF1A6480" Grid.Row="1" Grid.Column="2">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="OWIN &gt;" FontSize="12" />
+                        <TextBlock Text="VII" Style="{DynamicResource RomanNumeralStyle}"/>
+                    </Grid>
+                </Viewbox>
+            </Button>
+        </Grid>
+    </ScrollViewer>
+    
+</Page>
