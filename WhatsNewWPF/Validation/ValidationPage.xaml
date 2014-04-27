@@ -23,7 +23,7 @@
 		
 	</Page.Resources>
 
-    <Grid>
+    <Grid x:Name="LayoutRoot">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
@@ -32,8 +32,17 @@
 			<TextBlock Text="Validation" Style="{DynamicResource HeaderTextBlockStyle}" />
 			<TextBlock Text="Validation has always been possible with the IDataErrorInfo interface, .NET 4.5 adds asynchronous support for validation." TextWrapping="Wrap" />
 		</StackPanel>
-        <StackPanel Grid.Row="1">
-            <!-- See More at https://github.com/bendewey/WhatsNewWpf -->
+        <StackPanel Grid.Row="1" Width="250" HorizontalAlignment="Left">
+            
+            <TextBlock Text="Username" FontSize="24" />
+            <TextBox Text="{Binding Username, Mode=TwoWay, ValidatesOnDataErrors=True}" FontSize="24" />
+            
+            <TextBlock Text="First Name" FontSize="24" />
+            <TextBox FontSize="24" />
+
+            <TextBlock Text="Last Name" FontSize="24" />
+            <TextBox FontSize="24"/>
+
         </StackPanel>
     </Grid>
 </Page>
