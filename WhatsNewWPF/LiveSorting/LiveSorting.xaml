@@ -3,11 +3,17 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WhatsNewWPF.LiveSorting" 
       mc:Ignorable="d" 
+      DataContext=""
       d:DesignHeight="600" d:DesignWidth="800"
 	Title="Live Sorting" Tag="{DynamicResource ThemeBrush}">
 	<Page.Resources>
-        <SolidColorBrush x:Key="ThemeBrush" Color="#FF418B00"/>
+        <local:LiveSortingViewModel x:Key="ViewModel" />
+        <local:ChangeDirectionToGlyphConverter x:Key="ChangeDirectionToGlyphConverter" />
+        <local:ChangeDirectionToForegroundConverter x:Key="ChangeDirectionToForegroundConverter" />
+        
+	    <SolidColorBrush x:Key="ThemeBrush" Color="#FF418B00"/>
 		<Style TargetType="{x:Type TextBlock}">
 			<Setter Property="Margin" Value="4"/>
 		</Style>
@@ -20,22 +26,55 @@
 		<Style TargetType="{x:Type StackPanel}">
 			<Setter Property="Margin" Value="20"/>
 		</Style>
-		
-        <CollectionViewSource x:Key="StockData" />
+
+        <Style x:Key="DefaultCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Border Margin="{TemplateBinding Margin}">
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         
+        <Style x:Key="RightCellStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DefaultCellStyle}">
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="Padding" Value="2,2,10,2" />
+        </Style>
+
+        <CollectionViewSource x:Key="StockData" Source="{Binding Stocks, Source={StaticResource ViewModel}}" />
 	</Page.Resources>
 
     <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<StackPanel>
-			<TextBlock Text="Live Sorting" Style="{DynamicResource HeaderTextBlockStyle}" />
+        <StackPanel>
+            <TextBlock Text="Live Sorting" Style="{DynamicResource HeaderTextBlockStyle}" />
             <TextBlock Text="The Collection View offers a nice animation when you use the new IsLiveSorting property." TextWrapping="Wrap" />
-		</StackPanel>
-        <StackPanel Grid.Row="1">
-            <!-- See More at https://github.com/bendewey/WhatsNewWpf -->
         </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="Activate" Content="Activate" Padding="8" Click="Activate_OnClick"/>
+        </StackPanel>
+        <DataGrid x:Name="StocksDataGrid" Grid.Row="2" ItemsSource="{Binding Source={StaticResource StockData}}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150" CellStyle="{StaticResource DefaultCellStyle}"/>
+                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" CellStyle="{StaticResource DefaultCellStyle}"/>
+                <DataGridTextColumn Binding="{Binding Price, StringFormat=C2}" Header="Price" Width="100" CellStyle="{StaticResource RightCellStyle}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ChangeDirection, Converter={StaticResource ChangeDirectionToGlyphConverter}}" Foreground="{Binding ChangeDirection, Converter={StaticResource ChangeDirectionToForegroundConverter}}" FontFamily="Segoe UI Symbol" FontSize="20" Margin="3, -3, 0, 2" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

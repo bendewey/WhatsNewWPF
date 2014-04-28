@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LiveSorting\Converter.cs" />
     <Compile Include="LiveSorting\LiveSorting.xaml.cs">
       <DependentUpon>LiveSorting.xaml</DependentUpon>
     </Compile>
