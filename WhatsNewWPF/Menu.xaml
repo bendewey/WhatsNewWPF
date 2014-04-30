@@ -65,10 +65,10 @@
                 </Viewbox>
             </Button>
 
-            <Button Tag="WeakReferences/WeakReferencesPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF0F00A8" Grid.Row="1" Grid.Column="0">
+            <Button Tag="WeakEventReferences/WeakReferencesPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF0F00A8" Grid.Row="1" Grid.Column="0">
             	<Viewbox Margin="10">
             		<Grid Width="130" Height="130">
-                        <TextBlock Text="WeakReferences &gt;" FontSize="12" />
+                        <TextBlock Text="WeakEvent Reference &gt;" FontSize="12" />
             			<TextBlock Text="V" Style="{DynamicResource RomanNumeralStyle}" />
             		</Grid>
             	</Viewbox>

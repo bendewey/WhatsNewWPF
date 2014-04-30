@@ -61,7 +61,13 @@
     <Compile Include="Owin\OwinPage.xaml.cs">
       <DependentUpon>OwinPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WeakReferences\WeakReferencesPage.xaml.cs">
+    <Compile Include="WeakEventReferences\WeakWindow.xaml.cs">
+      <DependentUpon>WeakWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeakEventReferences\LeakingWindow.xaml.cs">
+      <DependentUpon>LeakingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeakEventReferences\WeakReferencesPage.xaml.cs">
       <DependentUpon>WeakReferencesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinRt\WinRtPage.xaml.cs">
@@ -84,7 +90,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WeakReferences\WeakReferencesPage.xaml">
+    <Page Include="WeakEventReferences\WeakWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WeakEventReferences\LeakingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WeakEventReferences\WeakReferencesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

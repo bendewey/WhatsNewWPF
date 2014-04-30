@@ -1,0 +1,8 @@
+﻿<Window x:Class="WhatsNewWPF.WeakEventReferences.LeakingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Leaking Window" Height="300" Width="300">
+    <Grid>
+        <TextBlock Text="I leak !!!"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
