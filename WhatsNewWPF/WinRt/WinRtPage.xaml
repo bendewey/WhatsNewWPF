@@ -20,8 +20,14 @@
 		<Style TargetType="{x:Type StackPanel}">
 			<Setter Property="Margin" Value="20"/>
 		</Style>
-		
-	</Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="Padding" Value="8"/>
+        </Style>
+        
+    </Page.Resources>
 
     <Grid>
 		<Grid.RowDefinitions>
@@ -33,7 +39,14 @@
 			<TextBlock Text="WPF can integrate with the Windows Runtime and provide a toast notification just like Windows Store apps." TextWrapping="Wrap" />
 		</StackPanel>
         <StackPanel Grid.Row="1">
-            <!-- See More at https://github.com/bendewey/WhatsNewWpf -->
+            <Button Content="Send Toast" Click="SendToast_Click" />
+
+            <Button Content="Create Shortcut" Click="CreateShortcut_Click" Visibility="Collapsed" />
+
+            <Button Content="Read Accelerometer" Click="AccelerometerStartStop_Click" />
+
+            <TextBlock x:Name="AccelerometerText" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" />
+
         </StackPanel>
     </Grid>
 </Page>
