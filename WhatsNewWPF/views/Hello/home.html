@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.title</title>
+    <style type="text/css">
+        html, body {
+            margin: 0 auto;
+            font-family: "Segoe UI";
+        }
+
+        header {
+            background: #1A6480;
+            color: #fff;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: normal;
+            font-family: "Segoe UI Light"
+        }
+
+        section {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>@Model.title</h1>
+    </header>
+    <section>
+        This is a web page rendered using NancyFX (<a href="http://nancyfx.org">http://nancyfx.org</a>) and OWIN for WPF.  In order to run this you need to install the following NuGet Packages:
+        <ul>
+            <li>Microsoft.Owin.SelfHost
+                <ul>
+                    <li>Owin</li>
+                    <li>Microsoft.Owin</li>
+                    <li>Microsoft.Owin.Diagnostics</li>
+                    <li>Microsoft.Owin.Hosting</li>
+                    <li>Microsoft.Owin.Host.HttpListener</li>
+                </ul>
+            </li>           
+            <li>
+                Nancy.Owin
+                <ul>
+                    <li>Nancy</li>
+                </ul>
+            </li>
+            <li>Nancy.Hosting.Owin</li>
+        </ul>
+    </section>
+</body>
+</html>
