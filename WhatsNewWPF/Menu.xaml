@@ -9,9 +9,9 @@
 	<Page.Resources>
 		<Style x:Key="RomanNumeralStyle" TargetType="{x:Type TextBlock}">
 			<Setter Property="FontFamily" Value="Book Antiqua" />
-			<Setter Property="FontSize" Value="90" />
+			<Setter Property="FontSize" Value="80" />
 			<Setter Property="HorizontalAlignment" Value="Center" />
-			<Setter Property="Margin" Value="0,20,0,0" />
+			<Setter Property="Margin" Value="0,30,0,0" />
 		</Style>
 	</Page.Resources>
 
@@ -74,20 +74,29 @@
             	</Viewbox>
             </Button>
 
-			<Button Tag="WinRt/WinRtPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF006BA8" Grid.Row="1" Grid.Column="1">
+            <Button Tag="Async/AsyncPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF006BA8" Grid.Row="1" Grid.Column="1">
                 <Viewbox Margin="10">
                     <Grid Width="130" Height="130">
-                        <TextBlock Text="Windows Runtime &gt;" FontSize="12" />
+                        <TextBlock Text="Async &gt;" FontSize="12" />
                         <TextBlock Text="VI" Style="{DynamicResource RomanNumeralStyle}"/>
                     </Grid>
                 </Viewbox>
             </Button>
 
-            <Button Tag="Owin/OwinPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF1A6480" Grid.Row="1" Grid.Column="2">
+            <Button Tag="WinRt/WinRtPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF1A6480" Grid.Row="1" Grid.Column="2">
+                <Viewbox Margin="10">
+                    <Grid Width="130" Height="130">
+                        <TextBlock Text="Windows Runtime &gt;" FontSize="12" />
+                        <TextBlock Text="VII" Style="{DynamicResource RomanNumeralStyle}"/>
+                    </Grid>
+                </Viewbox>
+            </Button>
+
+            <Button Tag="Owin/OwinPage.xaml" Click="Navigate_Click" Style="{DynamicResource EmptyButtonStyle}" Background="#FF7A0EAC" Grid.Row="1" Grid.Column="3">
                 <Viewbox Margin="10">
                     <Grid Width="130" Height="130">
                         <TextBlock Text="OWIN &gt;" FontSize="12" />
-                        <TextBlock Text="VII" Style="{DynamicResource RomanNumeralStyle}"/>
+                        <TextBlock Text="VIII" Style="{DynamicResource RomanNumeralStyle}"/>
                     </Grid>
                 </Viewbox>
             </Button>

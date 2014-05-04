@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Async\AsyncPage.xaml.cs">
+      <DependentUpon>AsyncPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LiveSorting\Converter.cs" />
     <Compile Include="LiveSorting\LiveSorting.xaml.cs">
       <DependentUpon>LiveSorting.xaml</DependentUpon>
@@ -121,6 +124,10 @@
     <Compile Include="Ribbon\RibbonPage.xaml.cs">
       <DependentUpon>RibbonPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Async\AsyncPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LiveSorting\LiveSorting.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

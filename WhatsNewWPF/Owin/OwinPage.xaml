@@ -7,7 +7,7 @@
       d:DesignHeight="600" d:DesignWidth="800"
 	Title="Open Web Interface for .NET (OWIN)" Tag="{DynamicResource ThemeBrush}">
 	<Page.Resources>
-        <SolidColorBrush x:Key="ThemeBrush" Color="#FF1A6480"/>
+        <SolidColorBrush x:Key="ThemeBrush" Color="#FF7A0EAC"/>
 		<Style TargetType="{x:Type TextBlock}">
 			<Setter Property="Margin" Value="4"/>
 		</Style>
