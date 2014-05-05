@@ -55,7 +55,7 @@
 
         <StackPanel x:Name="BindingExpressionPanel" Grid.Row="1" Grid.Column="2">
 
-            <TextBlock Text="Delay Binding" />
+            <TextBlock Text="Additional Binding Expressions" />
             <TextBlock Text="Search" />
             <TextBox x:Name="NameTextBox" Text="{Binding Path=Name, Mode=TwoWay}" />
             <Button Content="View Expression" Click="BindingPage_Click" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace WhatsNewWPF.Binding
@@ -19,6 +20,10 @@ namespace WhatsNewWPF.Binding
             var binding = NameTextBox.GetBindingExpression(TextBox.TextProperty);
             var textbox = binding.Target;
             var vm = binding.ResolvedSource;
+            if (Debugger.IsAttached)
+            {
+                Debugger.Break();
+            }
         }
     }
 
