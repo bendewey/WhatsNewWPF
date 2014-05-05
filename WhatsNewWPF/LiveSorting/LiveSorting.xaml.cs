@@ -111,11 +111,23 @@ namespace WhatsNewWPF.LiveSorting
     public class StockTicker : INotifyPropertyChanged
     {
         private double _price;
+        private ChangeDirection _changeDirection;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name { get; set; }
         public string Symbol { get; set; }
-        public ChangeDirection ChangeDirection { get; set; }
+
+        public ChangeDirection ChangeDirection
+        {
+            get { return _changeDirection; }
+            set
+            {
+                _changeDirection = value;
+                OnPropertyChanged("ChangeDirection");
+            }
+        }
+
         public double Price
         {
             get { return _price; }

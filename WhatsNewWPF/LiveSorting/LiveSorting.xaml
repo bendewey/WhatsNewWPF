@@ -33,7 +33,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGridCell}">
-                        <Border Margin="{TemplateBinding Margin}">
+                        <Border Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}">
                             <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" />
                         </Border>
                     </ControlTemplate>
@@ -67,6 +67,7 @@
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150" CellStyle="{StaticResource DefaultCellStyle}"/>
                 <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" CellStyle="{StaticResource DefaultCellStyle}"/>
                 <DataGridTextColumn Binding="{Binding Price, StringFormat=C2}" Header="Price" Width="100" CellStyle="{StaticResource RightCellStyle}"/>
+                <DataGridTextColumn Binding="{Binding ChangeDirection}" Header="change" CellStyle="{StaticResource DefaultCellStyle}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
