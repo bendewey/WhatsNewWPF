@@ -15,7 +15,6 @@ namespace WhatsNewWPF.LiveSorting
         public LiveSortingPage()
         {
             InitializeComponent();
-            DataContext = new LiveSortingViewModel();
             this.Loaded += OnLoaded;
         }
 
