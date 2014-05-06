@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup;
 using Microsoft.Owin.Hosting;
 using Nancy;
 using Owin;
@@ -45,6 +46,11 @@ namespace WhatsNewWPF.Owin
         {
             Process.Start("http://localhost:12345");
         }
+
+        private void Markdown_Changed(object sender, TextChangedEventArgs e)
+        {
+            MarkdownContentProvider.Instance.Content = ((TextBox) sender).Text;
+        }
     }
 
     public class Startup
@@ -61,7 +67,10 @@ namespace WhatsNewWPF.Owin
         {
             Get["/"] = _ =>
             {
-                var model = new { title = "Open Web Interface for .NET (OWIN)" };
+                var markdown = MarkdownContentProvider.Instance.Content;
+                var markdownProcessor = new MarkdownSharp.Markdown();
+                var content = markdownProcessor.Transform(markdown);
+                var model = new { title = "Open Web Interface for .NET (OWIN)", content = content };
                 return View["home", model];
             };
         }
@@ -86,5 +95,20 @@ namespace WhatsNewWPF.Owin
                 return tempFavicon;
             }
         }
+    }
+
+    public class MarkdownContentProvider
+    {
+        private MarkdownContentProvider()
+        {
+        }
+
+        private static MarkdownContentProvider _instance;
+        public static MarkdownContentProvider Instance
+        {
+            get { return _instance ?? (_instance = new MarkdownContentProvider()); }
+        }
+
+        public string Content { get; set; }
     }
 }

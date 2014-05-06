@@ -65,6 +65,9 @@
                 <TextBlock x:Name="RunningLabel" Text="running." FontSize="16" />
                 <Button Content="http://localhost:12345" Click="Open_Click" Style="{StaticResource HyperlinkButtonStyle}" />
             </StackPanel>
+            
+            <TextBlock Text="Markdown" />
+            <TextBox Height="150" TextChanged="Markdown_Changed" AcceptsReturn="True" TextWrapping="Wrap" />
         </StackPanel>
     </Grid>
 </Page>
