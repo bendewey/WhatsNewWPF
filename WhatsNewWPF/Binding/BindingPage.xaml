@@ -49,8 +49,8 @@
 
             <TextBlock Text="Delay Binding" />
             <TextBlock Text="Search" />
-            <TextBox Text="{Binding Path=Name, Delay=500, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="{Binding Path=Name}" />
+            <TextBox Text="{Binding Path=SearchText, Delay=500, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding Path=SearchText}" />
         </StackPanel>
 
         <StackPanel x:Name="BindingExpressionPanel" Grid.Row="1" Grid.Column="2">

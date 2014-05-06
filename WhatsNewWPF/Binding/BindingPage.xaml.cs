@@ -56,6 +56,17 @@ namespace WhatsNewWPF.Binding
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged("SearchText");
+            }
+        }
+
         private string _name;
         public string Name
         {
